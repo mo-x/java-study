@@ -4,6 +4,7 @@ package org.goskyer.thread.interrupt;
  * Created by monster_zzq on 2016/7/7.
  */
 public class ThreadInterruptDemo implements Runnable {
+    @Override
     public void run() {
         boolean stop = false;
         while (!stop) {
