@@ -1,6 +1,6 @@
 package org.goskyer.use.rmi.demo.client;
 
-import rmi.demo.Hello;
+import org.goskyer.use.rmi.demo.Hello;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
