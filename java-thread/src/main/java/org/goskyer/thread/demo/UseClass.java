@@ -15,15 +15,13 @@ public class UseClass {
     public void useArrayBlockingQueue() {
         final BlockingQueue<String> bq = new ArrayBlockingQueue<String>(16);
         for (int i = 0; i < 4; i++) {
-            new Thread(new Runnable() {
-                public void run() {
-                    while (true) {
-                        try {
-                            String log = bq.take();
-                            parseLog(log);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+            new Thread(() -> {
+                while (true) {
+                    try {
+                        String log = bq.take();
+                        parseLog(log);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
             }).start();
