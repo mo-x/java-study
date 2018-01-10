@@ -124,7 +124,7 @@ public class StaticLinkedList<T> {
 
 }
 
-//
+
 class Element<T> {
     /**
      * //记录存入的数据
@@ -133,7 +133,7 @@ class Element<T> {
     /**
      * 记录下一个数据的下标
      */
-    int cur;//
+    int cur;
 
     public Element(T data, int cur) {
         this.data = data;
