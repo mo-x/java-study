@@ -127,7 +127,7 @@ public class StaticLinkedList<T> {
 
 class Element<T> {
     /**
-     * //记录存入的数据
+     * 记录存入的数据
      */
     T data;
     /**
