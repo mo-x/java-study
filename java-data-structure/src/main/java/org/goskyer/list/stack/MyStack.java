@@ -15,10 +15,14 @@ public class MyStack {
 
     }
 
-    public void MyStack(int size) {
+    public MyStack(int size) {
         elements = new Object[size];
     }
 
+    /**
+     * todo 顺序问题
+     * @param object
+     */
     public void add(Object object) {
         if (this == null) {
             throw new NullPointerException(" curr stack is null");
@@ -40,7 +44,7 @@ public class MyStack {
         elementCount++;
     }
 
-    public int size(){
+    public int size() {
         return elementCount;
     }
 
@@ -57,7 +61,7 @@ public class MyStack {
         Arrays.stream(result).forEach(s -> {
             System.out.print(s);
         });*/
-        MyStack myStack = new MyStack();
+        MyStack myStack = new MyStack(5);
         myStack.add(1);
         myStack.add(2);
         myStack.add(3);
