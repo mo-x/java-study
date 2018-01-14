@@ -37,9 +37,9 @@ public class MyStack {
             elements = newArr;
         }
         if (elementCount == 0) {
-            elements[0] = object;
+            elements[elements.length-1] = object;
         } else {
-            elements[elementCount] = object;
+            elements[elements.length-1-elementCount] = object;
         }
         elementCount++;
     }
@@ -65,9 +65,11 @@ public class MyStack {
         myStack.add(1);
         myStack.add(2);
         myStack.add(3);
+        myStack.add(4);
         myStack.add(5);
         myStack.add(6);
         myStack.add(7);
+
 
         System.out.println(myStack.toString());
         System.out.println(myStack.size());
