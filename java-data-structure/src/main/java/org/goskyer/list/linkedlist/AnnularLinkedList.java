@@ -1,6 +1,9 @@
 package org.goskyer.list.linkedlist;
 
-
+/**
+ * 环形列表实现
+ * @param <E>
+ */
 public class AnnularLinkedList<E> {
 
     private ElmentObj[] elements;
