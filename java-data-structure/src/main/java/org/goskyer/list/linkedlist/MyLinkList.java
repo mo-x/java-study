@@ -5,6 +5,7 @@ import java.util.HashSet;
 /**
  * Created by monster_zzq on 2016/8/7.
  * 单向链表表Java实现
+ * @author zhiqing.zhang
  */
 public class MyLinkList {
 
@@ -195,6 +196,7 @@ public class MyLinkList {
         System.out.println(stringBuilder.toString());
     }
 
+
     public static void main(String[] args) {
         HashSet s = new HashSet<>();
         MyLinkList myLinkList = new MyLinkList();
@@ -202,6 +204,8 @@ public class MyLinkList {
         myLinkList.insertEnd(4);
         myLinkList.insert(0, 5);
         System.out.println(myLinkList.get(1));
+        myLinkList.print();
+        myLinkList.del(0);
         myLinkList.print();
         myLinkList.clear();
         myLinkList.print();

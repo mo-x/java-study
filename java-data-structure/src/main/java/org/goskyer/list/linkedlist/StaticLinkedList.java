@@ -9,13 +9,17 @@ public class StaticLinkedList<T> {
     /**
      * 保存数据的数组
      */
-    private Element<T>[] element = null;
+    private Element<T>[] element;
+    /**
+     * 数组大小
+     */
+    public  int          size    = 0;
     /**
      * 记录下一个可用的位置下标
      */
-    private int current = 0;
-    public int size = 0;
-    private int maxsize = 0;
+    private int current;
+
+    private int maxsize;
 
     /**
      * 构造器
@@ -26,7 +30,7 @@ public class StaticLinkedList<T> {
     public StaticLinkedList(int size) {
         element = new Element[size];
         for (int i = 0; i < size; i++) {
-            element[i] = new Element(null, -1);
+            element[i] = new Element<>(null, -1);
         }
         maxsize = size;
         current = 0;
@@ -112,7 +116,7 @@ public class StaticLinkedList<T> {
                     //通过判断当前元素的下一位指针数是否为null
                     if (element[i + 1] == null || element[i + 1].cur == -1) {
                         stringBuilder.append(element[i].data);
-                    } else{
+                    } else {
                         stringBuilder.append(element[i].data + ",");
                     }
                 }
@@ -129,14 +133,31 @@ class Element<T> {
     /**
      * 记录存入的数据
      */
-    T data;
+    T   data;
     /**
      * 记录下一个数据的下标
      */
     int cur;
 
+
     public Element(T data, int cur) {
         this.data = data;
+        this.cur = cur;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public int getCur() {
+        return cur;
+    }
+
+    public void setCur(int cur) {
         this.cur = cur;
     }
 }
