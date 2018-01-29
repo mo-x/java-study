@@ -4,6 +4,8 @@ package org.goskyer.list.linkedlist;
 /**
  * Created by zzqno on 2017-4-16.
  * 静态链表 Java实现
+ *
+ * @author zhiqing.zhang
  */
 public class StaticLinkedList<T> {
     /**
@@ -13,13 +15,27 @@ public class StaticLinkedList<T> {
     /**
      * 数组大小
      */
-    public  int          size    = 0;
+    public int size = 0;
     /**
      * 记录下一个可用的位置下标
      */
     private int current;
 
     private int maxsize;
+
+    private int setDefaultSize = 10;
+
+
+    public StaticLinkedList() {
+        element = new Element[setDefaultSize];
+        for (int i = 0; i < size; i++) {
+            element[i] = new Element<>(null, -1);
+        }
+        maxsize = size;
+        current = 0;
+        System.out.println("init StaticLinkedList...");
+    }
+
 
     /**
      * 构造器
@@ -96,7 +112,7 @@ public class StaticLinkedList<T> {
      */
     private void expand() {
         Element<T>[] oldElements = element;
-        Element<T>[] newElements = new Element[element.length * 2];
+        Element[]    newElements = new Element[element.length * 2];
         for (int i = 0; i < oldElements.length; i++) {
             newElements[i] = oldElements[i];
         }
@@ -117,7 +133,7 @@ public class StaticLinkedList<T> {
                     if (element[i + 1] == null || element[i + 1].cur == -1) {
                         stringBuilder.append(element[i].data);
                     } else {
-                        stringBuilder.append(element[i].data + ",");
+                        stringBuilder.append(element[i].data).append(",");
                     }
                 }
             }
@@ -126,8 +142,21 @@ public class StaticLinkedList<T> {
         System.out.println(stringBuilder.toString());
     }
 
-}
+    public static void main(String[] args) {
+        StaticLinkedList<Integer> staticLinkedList = new StaticLinkedList<>(3);
+        staticLinkedList.add(1);
+        staticLinkedList.add(2);
+        staticLinkedList.add(3);
+        staticLinkedList.add(4);
+        staticLinkedList.add(5);
+        staticLinkedList.print();
+        staticLinkedList.remove(0);
+        staticLinkedList.print();
 
+
+    }
+
+}
 
 class Element<T> {
     /**
@@ -139,6 +168,10 @@ class Element<T> {
      */
     int cur;
 
+
+    public Element(int size) {
+
+    }
 
     public Element(T data, int cur) {
         this.data = data;
