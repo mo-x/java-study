@@ -12,7 +12,6 @@ public class ExceutePoolDemo {
 
     public static void main(String[] args) {
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-
         Executor executor = Executors.newFixedThreadPool(10, namedThreadFactory);
         executor.execute(()->{
             System.out.println("runing");
