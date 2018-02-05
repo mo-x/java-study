@@ -8,6 +8,7 @@ public class AtomicIntegerFieldUpdaterTest {
 
     static class A {
 
+        //volatile int intValue = 120;
         volatile int intValue = 1000;
     }
 
@@ -40,10 +41,10 @@ public class AtomicIntegerFieldUpdaterTest {
             final int num = i;
             new Thread(() -> {
                 /**
-                 * TODO
-                 * 注意此处的第二个参数 如果直接使用a.intValue 每个线程都有修改的机会
-                 * 而使用 1处的赋值方法 则只有一个线程有修改机会
-                 * 比较过该类的字节码并无特殊的处理
+                 * 注意此处的第二个参数 如果不能直接使用a.intValue 对象属性赋值
+                 * 因为线程修改了一当属性值 expected = update 期望值=更新值
+                 * 每个线程都有修改的机会
+                 * 而使用1处的赋值方法 则只有一个线程有修改机会
                  */
                 if (ATOMIC_INTEGER_UPDATER.compareAndSet(a, b, 120)){
                     System.out.println("我是线程：" + num + " 我对对应的值做了修改！");
@@ -57,6 +58,7 @@ public class AtomicIntegerFieldUpdaterTest {
             e.printStackTrace();
         }
         System.out.println(a.intValue);
+        System.out.println(b);
 
     }
 }
