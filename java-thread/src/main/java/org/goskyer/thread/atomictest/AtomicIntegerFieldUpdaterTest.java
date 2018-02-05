@@ -8,7 +8,7 @@ public class AtomicIntegerFieldUpdaterTest {
 
     static class A {
 
-        volatile int intValue = 100;
+        volatile int intValue = 1000;
     }
 
     /**
@@ -31,12 +31,21 @@ public class AtomicIntegerFieldUpdaterTest {
 
     public final static AtomicIntegerFieldUpdater<A> ATOMIC_INTEGER_UPDATER = AtomicIntegerFieldUpdater.newUpdater(A.class, "intValue");
 
+
     public static void main(String[] args) {
         final A a = new A();
+        //1
+        int b = a.intValue;
         for (int i = 0; i < 100; i++) {
             final int num = i;
             new Thread(() -> {
-                if (ATOMIC_INTEGER_UPDATER.compareAndSet(a, 100, 120)) {
+                /**
+                 * TODO
+                 * 注意此处的第二个参数 如果直接使用a.intValue 每个线程都有修改的机会
+                 * 而使用 1处的赋值方法 则只有一个线程有修改机会
+                 * 比较过该类的字节码并无特殊的处理
+                 */
+                if (ATOMIC_INTEGER_UPDATER.compareAndSet(a, b, 120)){
                     System.out.println("我是线程：" + num + " 我对对应的值做了修改！");
                 }
             }).start();
