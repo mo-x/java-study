@@ -2,6 +2,7 @@ package org.goskyer.list.linkedlist;
 
 /**
  * 环形列表实现
+ *
  * @param <E>
  */
 public class AnnularLinkedList<E> {
@@ -40,6 +41,24 @@ public class AnnularLinkedList<E> {
         size++;
     }
 
+    public void remove(int index) {
+        if (index < 0) {
+            return;
+        }
+        if (header == null) {
+            return;
+        }
+        ElmentObj obj   = header;
+        int       start = 0;
+
+    }
+
+    
+
+
+
+
+
     public void print() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("{");
@@ -50,7 +69,6 @@ public class AnnularLinkedList<E> {
                 if (obj.next == header) {
                     break;
                 }
-                obj = obj.next;
             }
         }
         stringBuilder.append("}");
@@ -58,9 +76,10 @@ public class AnnularLinkedList<E> {
 
 
     public static void main(String[] args) {
-        AnnularLinkedList<Integer> annularLinkedList = new AnnularLinkedList();
+        AnnularLinkedList<Integer> annularLinkedList = new AnnularLinkedList<>();
         annularLinkedList.add(1);
         annularLinkedList.print();
+        annularLinkedList.remove(0);
 
     }
 
