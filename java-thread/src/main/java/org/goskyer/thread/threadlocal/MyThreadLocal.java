@@ -8,6 +8,7 @@ import java.util.Map;
  * Created by zzqno on 2017-4-5.
  * ThreadLocal原理实现
  * container 为map结构来保存与当前线程绑定的变量 来达到变量的隔离效果
+ * @author zhiqin.zhang
  */
 public class MyThreadLocal<T> {
 
