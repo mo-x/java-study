@@ -39,7 +39,7 @@ public class MyService {
         }
 
         Thread.sleep(1000);
-        System.out.println("result:" + myService.atomicInteger.get());
+        System.out.println("result:" + MyService.atomicInteger.get());
     }
 }
 
