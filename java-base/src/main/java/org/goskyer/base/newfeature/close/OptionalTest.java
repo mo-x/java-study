@@ -9,7 +9,7 @@ import java.util.Optional;
 public class OptionalTest {
 
     public static void main(String[] args) {
-        //调用工厂方法创建Optional实例
+        /*//调用工厂方法创建Optional实例
         Optional<String> name = Optional.of("Sanaulla");
         //传入参数为null，抛出NullPointerException.
         //Optional<String> someNull = Optional.of(null);
@@ -42,10 +42,38 @@ public class OptionalTest {
         } catch (Throwable ex) {
             //输出: No value present in the Optional instance
             System.out.println(ex.getMessage());
-        }
+        }*/
+
+        City city = new City();
+        Optional<City> optionalCity = Optional.ofNullable(city);
+        String s = optionalCity
+                .map(City::getName).orElse("No1");
+        City myCity = new City();
+        myCity.setCityNo("");
+        myCity.setAlias("乌托邦");
+        //myCity.setName("乌托邦");
+        String s1 = Optional.ofNullable(myCity.getCityNo()).orElse(myCity.getAlias());
+
+        String s2 = Optional.ofNullable(myCity).map(City::getName).map(c -> c.isEmpty() ? myCity.getAlias() : c).get();
+
+
+        System.out.println(s1);
+        System.out.println("s2:" + s2);
+        String default_city = Optional.ofNullable(myCity.getCityNo()).orElse(myCity.getAlias());
+        System.out.println(default_city);
+
+        Country country = new Country();
+        country.setCity(myCity);
+        String default_country = Optional.of(country)
+                .map(Country::getCity)
+                .map(City::getName)
+                .orElse("default country");
+        System.out.println(default_country);
 
 
     }
+
+
 }
 
 class ValueAbsentException extends Throwable {
@@ -61,5 +89,58 @@ class ValueAbsentException extends Throwable {
     @Override
     public String getMessage() {
         return "No value present in the Optional instance";
+    }
+}
+
+
+class City {
+    private String name;
+    private String cityNo;
+    private String alias;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCityNo() {
+        return cityNo;
+    }
+
+    public void setCityNo(String cityNo) {
+        this.cityNo = cityNo;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+}
+
+class Country {
+
+    private City city;
+    private String name;
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
