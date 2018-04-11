@@ -4,12 +4,15 @@ import java.util.Optional;
 
 /**
  * Created by zhangzhiqin on 2017/6/14.
- * Optional 来防止空指针异常
+ * Optional：
+ * 来防止空指针异常
+ * 减少if else判断逻辑 使代码更优雅
+ *
  */
 public class OptionalTest {
 
     public static void main(String[] args) {
-        /*//调用工厂方法创建Optional实例
+        //调用工厂方法创建Optional实例
         Optional<String> name = Optional.of("Sanaulla");
         //传入参数为null，抛出NullPointerException.
         //Optional<String> someNull = Optional.of(null);
@@ -42,7 +45,7 @@ public class OptionalTest {
         } catch (Throwable ex) {
             //输出: No value present in the Optional instance
             System.out.println(ex.getMessage());
-        }*/
+        }
 
         City city = new City();
         Optional<City> optionalCity = Optional.ofNullable(city);
@@ -53,7 +56,6 @@ public class OptionalTest {
         myCity.setAlias("乌托邦");
         //myCity.setName("乌托邦");
         String s1 = Optional.ofNullable(myCity.getCityNo()).orElse(myCity.getAlias());
-
         String s2 = Optional.ofNullable(myCity).map(City::getName).map(c -> c.isEmpty() ? myCity.getAlias() : c).get();
 
 
