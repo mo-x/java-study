@@ -1,7 +1,7 @@
 package org.goskyer.list;
 
 /**
- * 选择排序
+ * 快速排序
  *
  *
  */
