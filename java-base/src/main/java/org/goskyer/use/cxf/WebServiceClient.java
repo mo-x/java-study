@@ -10,10 +10,10 @@ import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 public class WebServiceClient {
 
     public static void main(String[] args) {
-        JaxWsProxyFactoryBean svr = new JaxWsProxyFactoryBean();
+       /* JaxWsProxyFactoryBean svr = new JaxWsProxyFactoryBean();
         svr.setServiceClass(HelloServcie.class);
         svr.setAddress("http://localhost:8080/helloWorld");
         HelloServcie hw = (HelloServcie) svr.create();
-        System.out.println(hw.say("jaty"));
+        System.out.println(hw.say("jaty"));*/
     }
 }
