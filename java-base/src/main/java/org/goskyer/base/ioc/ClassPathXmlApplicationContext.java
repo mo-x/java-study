@@ -12,14 +12,14 @@ import java.util.Map;
 /**
  * Created by zzqno on 2016-12-26.
  */
-public class ClassPathXmlApplicationContext implements BeanFactory{
+public class ClassPathXmlApplicationContext implements BeanFactory {
 
     private Map<String, Object> beans = new HashMap<String, Object>();
 
     public ClassPathXmlApplicationContext() throws Exception {
         SAXBuilder sb = new SAXBuilder();
         String path = Class.class.getClass().getResource("/").getPath();
-        System.out.println("path:"+path);
+        System.out.println("path:" + path);
         Document doc = sb.build("d:/bean.xml"); // 构造文档对象
         Element root = doc.getRootElement(); // 获取根元素HD
         List list = root.getChildren("bean"); // 取名字为bean的所有元素
@@ -30,7 +30,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory{
             Object beanObj = Class.forName(clazz).newInstance(); // 反射获取对象
             beans.put(id, beanObj); // 将对象存入Bean工厂
 
-            for (Element propertyElement : (List<Element>) element.getChildren("property")) {
+            for (Element propertyElement : element.getChildren("property")) {
                 String name = propertyElement.getAttributeValue("name"); // name="userDao"
                 String bean = propertyElement.getAttributeValue("bean"); // bean="userDao"
                 Object injectObject = beans.get(bean); // 从Bean工厂中获取UserDao
