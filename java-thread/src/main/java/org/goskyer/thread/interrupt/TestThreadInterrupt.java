@@ -2,6 +2,7 @@ package org.goskyer.thread.interrupt;
 
 /**
  * Created by monster_zzq on 2016/7/8.
+ * 中断线程代码运行示例
  */
 public class TestThreadInterrupt extends Thread{
 
@@ -26,6 +27,6 @@ public class TestThreadInterrupt extends Thread{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        thread.interrupt();
+        thread.interrupt();//发出中断信号
     }
 }

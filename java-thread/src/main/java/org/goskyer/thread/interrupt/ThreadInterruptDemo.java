@@ -24,6 +24,7 @@ public class ThreadInterruptDemo implements Runnable {
         System.out.println(" interrupt thread .... ");
         /**
          * 注意此处线程不会中断
+         *
          */
         thread.interrupt();
         System.out.println("线程是否中断：" + thread.isInterrupted());

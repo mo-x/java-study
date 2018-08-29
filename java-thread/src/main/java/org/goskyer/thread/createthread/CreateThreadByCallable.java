@@ -11,8 +11,8 @@ public class CreateThreadByCallable implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        for (int i = 0; i <10 ; i++) {
-            System.out.println("thread calll"+i);
+        for (int i = 0; i < 10; i++) {
+            System.out.println("thread call:" + i);
         }
         return "call";
     }
@@ -22,15 +22,17 @@ public class CreateThreadByCallable implements Callable<String> {
         CreateThreadByCallable createThreadByCallable = new CreateThreadByCallable();
         FutureTask<String> futureTask = new FutureTask<String>(createThreadByCallable);
         new Thread(futureTask).start();
-        try {
+        System.out.println("get() start=====>");
+        /*try {
             //调用get方法 主线程阻塞执行。否则异步。
             //get()得到call()方法返回的结果
+            System.out.println("get() start---");
             System.out.println(futureTask.get());
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        }*/
+        System.out.println("main thread is end");
+
     }
 
 }

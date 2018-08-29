@@ -12,7 +12,7 @@ public class ThreadInterruptDemo1 extends Thread {
             System.out.println(" this thread is running...");
             if (isInterrupted()) {
                 System.out.println("break....");
-                break;
+                return;
             }
         }
         System.out.println("this thread exiting under request....");
