@@ -13,12 +13,12 @@ public class ConditionTest {
     //容器
     private LinkedList<String> buffer;
     //容器最大+
-    private int maxSize ;
+    private int maxSize;
     private Lock lock;
     private Condition fullCondition;
     private Condition notFullCondition;
 
-    ConditionTest(int maxSize){
+    ConditionTest(int maxSize) {
         this.maxSize = maxSize;
         buffer = new LinkedList<String>();
         lock = new ReentrantLock();
@@ -29,7 +29,7 @@ public class ConditionTest {
     public void set(String string) throws InterruptedException {
         lock.lock();    //获取锁
         try {
-            while (maxSize == buffer.size()){
+            while (maxSize == buffer.size()) {
                 notFullCondition.await();       //满了，添加的线程进入等待状态
             }
 
@@ -44,7 +44,7 @@ public class ConditionTest {
         String string;
         lock.lock();
         try {
-            while (buffer.size() == 0){
+            while (buffer.size() == 0) {
                 fullCondition.await();
             }
             string = buffer.poll();
