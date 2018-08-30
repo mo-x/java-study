@@ -9,7 +9,7 @@ import akka.japi.pf.ReceiveBuilder;
 public class Demo {
 
     public static void main(String[] args) {
-        ActorSystem system = ActorSystem.create("actor-demo-java");
+        ActorSystem system = ActorSystem.create("actor-demo1-java");
         ActorRef hello = system.actorOf(Props.create(Hello.class));
         hello.tell("Bob", ActorRef.noSender());
         hello.tell("Jay", ActorRef.noSender());

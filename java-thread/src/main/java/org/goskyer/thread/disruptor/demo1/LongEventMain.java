@@ -1,4 +1,4 @@
-package org.goskyer.thread.disruptor;
+package org.goskyer.thread.disruptor.demo1;
 
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
@@ -31,12 +31,15 @@ public class LongEventMain {
         RingBuffer<LongEvent> ringBuffer = disruptor.getRingBuffer();
 
         LongEventProducer producer = new LongEventProducer(ringBuffer);
+        LongEventProducerWithTranslator longEventProducerWithTranslator = new LongEventProducerWithTranslator(ringBuffer);
 
         ByteBuffer bb = ByteBuffer.allocate(8);
         for (long l = 0; true; l++) {
             bb.putLong(0, l);
             producer.onData(bb);
+            longEventProducerWithTranslator.onData(bb);
             Thread.sleep(1000);
         }
+
     }
 }

@@ -10,7 +10,7 @@ public class DemoLambda {
 
 
     public static void main(String[] args) {
-        ActorSystem system = ActorSystem.create("actor-demo-java");
+        ActorSystem system = ActorSystem.create("actor-demo1-java");
         ActorRef bob = system.actorOf(Greeter.props("Bob", "Howya doing"));
         ActorRef alice = system.actorOf(Greeter.props("Alice", "Happy to meet you"));
         bob.tell(new Greet(alice), ActorRef.noSender());

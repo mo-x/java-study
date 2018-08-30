@@ -1,4 +1,4 @@
-package org.goskyer.thread.disruptor;
+package org.goskyer.thread.disruptor.demo1;
 
 import com.lmax.disruptor.EventTranslatorOneArg;
 import com.lmax.disruptor.RingBuffer;

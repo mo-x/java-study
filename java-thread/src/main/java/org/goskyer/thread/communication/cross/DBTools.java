@@ -2,7 +2,7 @@ package org.goskyer.thread.communication.cross;
 
 /**
  * Created by zzqno on 2017-6-21.
- * 交叉打印 demo
+ * 交叉打印 demo1
  */
 public class DBTools {
     //决定了先运行那个线程

@@ -7,7 +7,7 @@ public class Test {
 
 
     public static void main(String[] args) {
-        ThreadFactory namedThreadFactory = new MyThreadFactory("demo-pool-%d");
+        ThreadFactory namedThreadFactory = new MyThreadFactory("demo1-pool-%d");
 
 
         ExecutorService singleThreadPool = new ThreadPoolExecutor(1, 1,
