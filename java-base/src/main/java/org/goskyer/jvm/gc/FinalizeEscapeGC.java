@@ -1,7 +1,5 @@
 package org.goskyer.jvm.gc;
 
-import org.goskyer.base.question.interview.NULL;
-
 public class FinalizeEscapeGC {
     public static FinalizeEscapeGC SAVE_HOOK = null;
 
