@@ -1,4 +1,4 @@
-package org.goskyer.list;
+package org.goskyer.sort;
 
 /**
  * @description: 选择排序
