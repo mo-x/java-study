@@ -17,7 +17,8 @@ public class FastSort {
      */
     public static int partition(int[] array, int lo, int hi) {
         /** 固定的切分方式 */
-        int key = array[lo];//选取了基准点
+        //选取了基准点
+        int key = array[lo];
         while (lo < hi) {
             //从后半部分向前扫描
             while (array[hi] >= key && hi > lo) {
@@ -30,7 +31,8 @@ public class FastSort {
             }
             array[hi] = array[lo];
         }
-        array[hi] = key;//最后把基准存入
+        //最后把基准存入
+        array[hi] = key;
         return hi;
     }
 

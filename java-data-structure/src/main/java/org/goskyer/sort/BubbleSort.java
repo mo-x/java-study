@@ -20,8 +20,10 @@ public class BubbleSort {
 
 
     private static Integer[] bubbleSort(Integer[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {//外层循环控制排序趟数
-            for (int j = 0; j < arr.length - 1 - i; j++) {//内层循环控制每一趟排序多少次
+        //外层循环控制排序趟数
+        for (int i = 0; i < arr.length - 1; i++) {
+            //内层循环控制每一趟排序多少次
+            for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     //交换值
                     int temp = arr[j];
