@@ -1,6 +1,8 @@
 package org.goskyer.sort;
 
 
+import java.util.Arrays;
+
 /**
  * 直接选择排序
  * 在要排序的一组数中，选出最小的一个数与第一个位置的数交换；
@@ -11,30 +13,25 @@ public class DirectSelectSort {
     public static void main(String[] args) {
         int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 1, 8};
         System.out.println("排序之前：");
-        for (int anA1 : a) {
-            System.out.print(anA1 + " ");
-        }
-        // 直接选择排序
+        Arrays.stream(a).forEach(b -> System.out.print(b + " "));
         for (int i = 0; i < a.length; i++) {
             int min = a[i];
             // 最小数的索引
             int n = i;
             for (int j = i + 1; j < a.length; j++) {
-                // 找出最小的数
                 if (a[j] < min) {
+                    //记录最小数和索引
                     min = a[j];
                     n = j;
                 }
             }
-            a[n] = a[i];
+            //交换当前遍历的位置最小数
             a[i] = min;
 
+            a[n] = a[i];
         }
-        System.out.println();
         System.out.println("排序之后：");
-        for (int anA : a) {
-            System.out.print(anA + " ");
-        }
+        Arrays.stream(a).forEach(b -> System.out.print(b + " "));
 
     }
 }
