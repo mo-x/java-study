@@ -15,7 +15,6 @@ public class Publisher {
     public Publisher() {
         JedisPool = JedisUtil.getJedisPool();
         jedis = JedisPool.getResource();
-        jedis.auth("123");
     }
 
     public void publish(final String channel, final String message) {

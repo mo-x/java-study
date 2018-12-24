@@ -14,7 +14,6 @@ public class Subscriber {
     public Subscriber() {
         JedisPool = JedisUtil.getJedisPool();
         jedis = JedisPool.getResource();
-        jedis.auth("123");
     }
 
     /**

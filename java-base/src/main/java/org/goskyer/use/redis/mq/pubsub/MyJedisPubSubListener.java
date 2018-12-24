@@ -27,16 +27,19 @@ public class MyJedisPubSubListener extends JedisPubSub {
     }
 
     // 初始化按表达式的方式订阅时候的处理
+    @Override
     public void onPSubscribe(String pattern, int subscribedChannels) {
 // System.out.println(pattern + "=" + subscribedChannels);
     }
 
     // 取消按表达式的方式订阅时候的处理
+    @Override
     public void onPUnsubscribe(String pattern, int subscribedChannels) {
 // System.out.println(pattern + "=" + subscribedChannels);
     }
 
     // 取得按表达式的方式订阅的消息后的处理
+    @Override
     public void onPMessage(String pattern, String channel, String message) {
         System.out.println(pattern + "=" + channel + "=" + message);
     }
