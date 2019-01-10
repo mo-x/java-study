@@ -3,7 +3,9 @@ package org.goskyer.list.stack;
 import java.util.Arrays;
 
 /**
- * 栈 先进后出
+ * 栈 后进后出
+ * 目前实现的结构只能使用一次。若需要反复利用该栈 需要在压栈的时候做处理
+ * @author zhiqin.zhang
  */
 public class MyStack {
 
@@ -20,28 +22,35 @@ public class MyStack {
     }
 
     /**
-     * todo 顺序问题
+     * 压栈
+     *
      * @param object
      */
-    public void add(Object object) {
-        if (this == null) {
-            throw new NullPointerException(" curr stack is null");
-        }
+    public void push(Object object) {
         if (elements == null) {
             elements = new Object[10];
         }
-        //是否扩容
         if (elements.length == elementCount) {
-            Object[] newArr = new Object[elements.length * 2];
-            System.arraycopy(elements, 0, newArr, 0, elements.length);
-            elements = newArr;
+            throw new RuntimeException("栈已经满了");
         }
         if (elementCount == 0) {
-            elements[elements.length-1] = object;
+            elements[elements.length - 1] = object;
         } else {
-            elements[elements.length-1-elementCount] = object;
+            elements[elements.length - 1 - elementCount] = object;
         }
         elementCount++;
+    }
+
+    public Object pop() {
+        if (elementCount == 0) {
+            throw new RuntimeException("栈已经空了");
+        }
+        Object result = elements[0];
+        Object[] newArr = new Object[elements.length - 1];
+        System.arraycopy(elements, 1, newArr, 0, elements.length - 1);
+        elements = newArr;
+        elementCount = elementCount - 1;
+        return result;
     }
 
     public int size() {
@@ -55,22 +64,13 @@ public class MyStack {
     }
 
     public static void main(String[] args) {
-    /*    int[] fun = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        int[] result = new int[20];
-        System.arraycopy(fun, 0, result, 0, fun.length);
-        Arrays.stream(result).forEach(s -> {
-            System.out.print(s);
-        });*/
-        MyStack myStack = new MyStack(5);
-        myStack.add(1);
-        myStack.add(2);
-        myStack.add(3);
-        myStack.add(4);
-        myStack.add(5);
-        myStack.add(6);
-        myStack.add(7);
-
-
+        MyStack myStack = new MyStack(3);
+        myStack.push(1);
+        myStack.push(2);
+        myStack.push(3);
+        myStack.pop();
+        myStack.pop();
+        myStack.pop();
         System.out.println(myStack.toString());
         System.out.println(myStack.size());
 
