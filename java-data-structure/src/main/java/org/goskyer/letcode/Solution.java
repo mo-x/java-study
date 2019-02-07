@@ -13,10 +13,12 @@ import java.util.Map;
  */
 public class Solution {
     public static void main(String[] args) {
-        int[] nums = {3,2,4};
+        int[] nums = {3, 2, 4};
         int[] ints = Solution.twoSum(nums, 6);
+
         System.out.println(Arrays.toString(ints));
-        System.out.println(Arrays.toString(twoSumByMap(nums, 6)));
+        System.out.println(Arrays.toString(twoSumByMap1(nums, 6)));
+        System.out.println(Arrays.toString(twoSumByMap2(nums, 6)));
 
     }
 
@@ -41,8 +43,14 @@ public class Solution {
         return result;
     }
 
-
-    private static Integer[] twoSumByMap(int[] ints, int taget) {
+    /**
+     * 利用
+     *
+     * @param ints
+     * @param taget
+     * @return
+     */
+    private static Integer[] twoSumByMap1(int[] ints, int taget) {
         Map<Integer, Integer[]> map = new HashMap<>(ints.length);
         for (int i = 0; i < ints.length; i++) {
             for (int j = i + 1; j < ints.length; j++) {
@@ -52,6 +60,31 @@ public class Solution {
         }
         System.out.println(map.size());
         return map.get(taget);
+    }
 
+    private static int[] twoSumByMap2(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+        }
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement) && map.get(complement) != i) {
+                return new int[]{i, map.get(complement)};
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+
+    private int[] twoSumByMap3(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("No two sum solution");
     }
 }
