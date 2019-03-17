@@ -15,8 +15,10 @@ public class Client {
             //1.创建客户端Socket，指定服务器地址和端口
             Socket socket = new Socket("localhost", 9999);
             //2.获取输出流，向服务器端发送信息
-            OutputStream os = socket.getOutputStream();//字节输出流
-            PrintWriter pw = new PrintWriter(os);//将输出流包装为打印流
+            //字节输出流
+            OutputStream os = socket.getOutputStream();
+            //将输出流包装为打印流
+            PrintWriter pw = new PrintWriter(os);
             pw.write("用户名：alice;密码：789");
             pw.flush();
             socket.shutdownOutput();//关闭输出流
@@ -33,8 +35,6 @@ public class Client {
             pw.close();
             os.close();
             socket.close();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
