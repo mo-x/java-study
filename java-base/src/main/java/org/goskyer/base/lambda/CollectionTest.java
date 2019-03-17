@@ -31,6 +31,9 @@ public class CollectionTest {
         .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
         .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
     sortedMap.forEach((k, v) -> System.out.println("k:" + k + ",v:" + v));
+    Integer num = null;
+    Integer integer = Optional.ofNullable(num).orElse(0 + 1);
+    System.out.println(integer);
   }
 
   public static Stream<Character> characterStream(String s) {

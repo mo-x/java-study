@@ -26,7 +26,8 @@ public class GetterProcessor extends AbstractProcessor {
     private Names names;
 
     /**
-     * init的主要用途是通过ProcessingEnvironment来获取编译阶段的一些环境信息;process主要是实现具体逻辑的地方，
+     * init的主要用途是通过ProcessingEnvironment来获取编译阶段的一些环境信息;
+     * process主要是实现具体逻辑的地方，
      * 也就是对AST进行处理的地方。
      *
      * @param processingEnv

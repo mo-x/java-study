@@ -23,13 +23,9 @@ public class OioServer {
 			//获取一个套接字（阻塞）
 			final Socket socket = server.accept();
 			System.out.println("来个一个新客户端！");
-			newCachedThreadPool.execute(new Runnable() {
-				
-				@Override
-				public void run() {
-					//业务处理
-					handler(socket);
-				}
+			newCachedThreadPool.execute(() -> {
+				//业务处理
+				handler(socket);
 			});
 			
 		}

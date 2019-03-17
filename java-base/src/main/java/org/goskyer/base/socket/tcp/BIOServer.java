@@ -26,7 +26,8 @@ public class BIOServer {
             isr = new InputStreamReader(is);
             br = new BufferedReader(isr);
             String info;
-            while ((info = br.readLine()) != null) {//循环读取客户端的信息
+            //循环读取客户端的信息
+            while ((info = br.readLine()) != null) {
                 System.out.println("我是服务器，客户端说：" + info);
             }
             socket.shutdownInput();//关闭输入流
