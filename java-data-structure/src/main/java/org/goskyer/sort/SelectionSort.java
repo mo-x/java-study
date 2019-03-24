@@ -19,10 +19,10 @@ public class SelectionSort {
     for (int i = 0; i < arr.length - 1; i++) {
       int k = i;
       // 选最小的记录
+      // 这里k+1 是因为最小的已经排在前面了 前面的无须再遍历
       for (int j = k + 1; j < arr.length; j++) {
-        //
+        // 找出最小数 记下目前找到的最小值所在的位置
         if (arr[j] < arr[k]) {
-          // 记下目前找到的最小值所在的位置
           k = j;
         }
       }
