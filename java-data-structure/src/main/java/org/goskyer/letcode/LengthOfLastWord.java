@@ -11,7 +11,7 @@ package org.goskyer.letcode;
  *
  * <p>输入: "Hello World" 输出: 5
  */
-public class lengthOfLastWord {
+public class LengthOfLastWord {
 
   /**
    * @param s
