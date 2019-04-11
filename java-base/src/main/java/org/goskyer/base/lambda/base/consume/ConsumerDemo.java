@@ -1,13 +1,10 @@
-package org.goskyer.base.lambda;
-
-import com.google.common.base.Function;
+package org.goskyer.base.lambda.base.consume;
 
 import java.util.function.Consumer;
 
 public class ConsumerDemo {
 
   public static void main(String[] args) {
-    //
     Consumer<Integer> consumer =
         x -> {
           int a = x + 2;
@@ -16,6 +13,7 @@ public class ConsumerDemo {
           // a= 12_
           System.out.println(a + "_");
         };
+    System.out.println("lazy...");
     consumer.accept(10);
 
     Consumer<User> userConsumer =

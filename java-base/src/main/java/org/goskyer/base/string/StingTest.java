@@ -1,4 +1,4 @@
-package org.goskyer.base.String;
+package org.goskyer.base.string;
 
 /**
  * Created by zzqno on 2017-5-15.

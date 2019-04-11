@@ -34,6 +34,12 @@ public class CollectionTest {
     Integer num = null;
     Integer integer = Optional.ofNullable(num).orElse(0 + 1);
     System.out.println(integer);
+
+    List<String> collect1 = words.stream().collect(Collectors.toList());
+    List<String> list =
+        Stream.of("a", "b", "hello")
+            .map(string -> string.toUpperCase())
+            .collect(Collectors.toList());
   }
 
   public static Stream<Character> characterStream(String s) {

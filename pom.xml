@@ -13,7 +13,6 @@
         <module>java-data-structure</module>
         <module>java-designMode</module>
         <module>java-thread</module>
-        <module>../SpringCloud-study/zipkip</module>
         <module>java-middleware</module>
     </modules>
 

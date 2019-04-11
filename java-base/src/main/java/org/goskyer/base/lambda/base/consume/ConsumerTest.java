@@ -1,4 +1,4 @@
-package org.goskyer.base.lambda;
+package org.goskyer.base.lambda.base.consume;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;

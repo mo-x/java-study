@@ -24,6 +24,5 @@ public class SingleThreadExecutorDemo {
         }
         executorService.shutdown();
         System.out.println("Thread main end");
-
     }
 }

@@ -1,14 +1,12 @@
 package org.goskyer.base.lambda;
 
-import com.google.common.base.Supplier;
-
 import javax.swing.text.DateFormatter;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.BinaryOperator;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -33,11 +31,22 @@ public class Demo {
             .flatMap(Collection::stream)
             .collect(Collectors.toList());
     System.out.println(together);
+
     // reduce 求和
     int count = Stream.of(1, 2, 3).reduce(0, (acc, element) -> acc + element);
     System.out.println(count);
 
     BinaryOperator<Integer> accumulator = (acc, element) -> acc + element;
     int count1 = accumulator.apply(accumulator.apply(accumulator.apply(0, 1), 2), 3);
+    System.out.println(count1);
+
+    // 自定义lambda函数
+    GreetingService greetService = message -> System.out.println("Hello " + message);
+    greetService.sayMessage("name");
+    GreetingService greetingServiceI = message -> System.out.println("hello" + message);
+
+
+    IntPredicate evenNumbers = (int i) -> i % 2 == 0;
+    evenNumbers.test(1000);
   }
 }

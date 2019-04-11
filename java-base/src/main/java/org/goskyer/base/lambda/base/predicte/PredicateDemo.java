@@ -1,4 +1,4 @@
-package org.goskyer.base.lambda;
+package org.goskyer.base.lambda.base.predicte;
 
 import java.util.ArrayList;
 import java.util.List;
