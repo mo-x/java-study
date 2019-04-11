@@ -11,13 +11,12 @@ import java.util.stream.Stream;
 public class Demo {
 
   public static void main(String[] args) {
-    //
+    // 1.使用方法
     List<Integer> l = map(Arrays.asList("lambda", "in", "action"), String::length);
     l.forEach(System.out::println);
-
+    // 2.简写
     List<Integer> collect =
         Stream.of("lambda", "in", "action").map(String::length).collect(Collectors.toList());
-
     collect.forEach(System.out::println);
   }
 
