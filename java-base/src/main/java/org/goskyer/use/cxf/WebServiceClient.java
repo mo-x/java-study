@@ -1,7 +1,5 @@
 package org.goskyer.use.cxf;
 
-import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-
 /**
  * Created by zzqno on 2017-4-8.
  * WebService客户端实现
