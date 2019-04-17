@@ -1,4 +1,4 @@
-import org.goskyer.base.lambda.BestFinder;
+import org.goskyer.base.lambda.completableFuture.BestFinder;
 
 public class Test {
 

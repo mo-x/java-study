@@ -1,4 +1,4 @@
-package org.goskyer.base.lambda;
+package org.goskyer.base.lambda.completableFuture;
 
 import java.util.Arrays;
 import java.util.List;
