@@ -9,32 +9,32 @@ public class CountDownLatchTest {
         new Thread(() -> {
             try {
                 System.out.println("子线程"+Thread.currentThread().getName()+"正在执行");
-                Thread.sleep(3000);
+                Thread.sleep(10000);
                 System.out.println("子线程"+Thread.currentThread().getName()+"执行完毕");
                 latch.countDown();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }).start();
+        },"CountDownLatchTest0").start();
 
         new Thread(() -> {
             try {
                 System.out.println("子线程"+Thread.currentThread().getName()+"正在执行");
-                Thread.sleep(3000);
+                Thread.sleep(5000);
                 System.out.println("子线程"+Thread.currentThread().getName()+"执行完毕");
                 latch.countDown();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }).start();
+        },"CountDownLatchTest1").start();
 
+        System.out.println("等待2个子线程执行完毕...");
         try {
-            System.out.println("等待2个子线程执行完毕...");
             latch.await();
-            System.out.println("2个子线程已经执行完毕");
-            System.out.println("继续执行主线程");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("2个子线程已经执行完毕");
+        System.out.println("继续执行主线程");
     }
 }

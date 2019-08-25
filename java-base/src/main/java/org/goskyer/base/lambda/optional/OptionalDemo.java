@@ -13,9 +13,12 @@ public class OptionalDemo {
     if (apple != null) {
       name = apple.getName();
     }
+    apple = null;
     // 改进写法 optional获取name
-    Optional<String> optional = Optional.ofNullable(apple).map(Apple::getName);
+    String uknow = Optional.ofNullable(apple).map(Apple::getName).orElse("Uknow");
+    Optional<String> s = Optional.ofNullable(apple).map(Apple::getName);
 
+    System.out.println("optional get:" +uknow);
     String insurance = "";
 
     Person person = new Person();
@@ -36,7 +39,7 @@ public class OptionalDemo {
             .map(Car::getInsurance)
             .map(Insurance::getName)
             .orElse("Unknown");
-    System.out.println(unknown);
+//    System.out.println(unknown);
   }
 
   public String getCarInsuranceName(Optional<Person> person) {

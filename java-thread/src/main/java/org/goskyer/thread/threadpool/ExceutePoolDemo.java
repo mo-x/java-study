@@ -16,5 +16,7 @@ public class ExceutePoolDemo {
         executor.execute(()->{
             System.out.println("runing");
         });
+        ExecutorService executorService = Executors.newFixedThreadPool(1, namedThreadFactory);
+
     }
 }

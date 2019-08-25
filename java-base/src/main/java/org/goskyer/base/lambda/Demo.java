@@ -32,12 +32,17 @@ public class Demo {
     System.out.println(together);
 
     // reduce 求和
-    int count = Stream.of(1, 2, 3).reduce(0, (acc, element) -> acc + element);
+    int count = Stream.of(1, 2, 3).reduce(0, Integer::sum);
     System.out.println(count);
+    Integer maxInt = Stream.of(1, 2, 3).max(Integer::compareTo).orElse(0);
+    Integer minInt = Stream.of(1, 2, 3).min(Integer::compareTo).orElse(0);
+
+    String s1 = Stream.of("a", "b", "c").filter("c"::equals).findFirst().orElse("");
 
     BinaryOperator<Integer> accumulator = (acc, element) -> acc + element;
     int count1 = accumulator.apply(accumulator.apply(accumulator.apply(0, 1), 2), 3);
     System.out.println(count1);
+
 
     // 自定义lambda函数
     GreetingService greetService = message -> System.out.println("Hello " + message);
@@ -100,6 +105,5 @@ public class Demo {
 
     Optional<String> optional1 = Arrays.stream(words).filter(s -> s.equals("hello1")).findAny();
     Optional<String> optional2 = Arrays.stream(words).filter(s -> s.equals("hello1")).findFirst();
-
   }
 }
