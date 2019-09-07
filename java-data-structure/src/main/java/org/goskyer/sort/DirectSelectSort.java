@@ -27,7 +27,6 @@ public class DirectSelectSort {
             }
             //交换当前遍历的位置最小数
             a[i] = min;
-
             a[n] = a[i];
         }
         System.out.println("排序之后：");
