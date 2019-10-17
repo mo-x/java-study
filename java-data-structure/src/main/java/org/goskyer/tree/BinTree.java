@@ -24,7 +24,7 @@ public class BinTree {
   }
 
   // 先序遍历
-  public void prevOrder(TreeNode root) {
+  void prevOrder(TreeNode root) {
     if (root == null) {
       return;
     }
@@ -42,6 +42,7 @@ public class BinTree {
     System.out.print(root.getData() + ",");
     inOrder(root.getRight());
   }
+
   // 后序遍历
   public void postOrder(TreeNode root) {
     if (root == null) {
