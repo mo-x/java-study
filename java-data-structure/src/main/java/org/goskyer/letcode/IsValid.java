@@ -1,9 +1,6 @@
 package org.goskyer.letcode;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
@@ -26,38 +23,45 @@ import java.util.Stack;
  */
 public class IsValid {
 
-  public static boolean isValid(String s) {
-    Map<Character, Character> map = new HashMap<>();
-    map.put(')', '(');
-    map.put('}', '{');
-    map.put(']', '[');
-    Stack<Character> stringStack = new Stack<>();
-    if ("".equals(s)) {
-      return true;
+    /**
+     * 采用栈的实现方式
+     *
+     * @param s
+     * @return
+     */
+    public static boolean isValid(String s) {
+        Map<Character, Character> map = new HashMap<>(3);
+        map.put(')', '(');
+        map.put('}', '{');
+        map.put(']', '[');
+        Stack<Character> stringStack = new Stack<>();
+//        Deque<Character> stringStack = new ArrayDeque<>();
+        if ("".equals(s)) {
+            return true;
+        }
+        if (s == null || s.length() == 1) {
+            return false;
+        }
+        char[] chars = s.toCharArray();
+        for (char c : chars) {
+            if (map.get(c) == null) {
+                stringStack.push(c);
+            } else if (!stringStack.isEmpty() && map.get(c).equals(stringStack.peek())) {
+                stringStack.pop();
+            } else {
+                return false;
+            }
+        }
+        return stringStack.isEmpty();
     }
-    if (s == null || s.length() == 1) {
-      return false;
-    }
-    char[] chars = s.toCharArray();
-    for (char c : chars) {
-      if (map.get(c) == null) {
-        stringStack.push(c);
-      } else if (stringStack.size() > 0 && map.get(c).equals(stringStack.peek())) {
-        stringStack.pop();
-      } else {
-        return false;
-      }
-    }
-    return stringStack.size() == 0;
-  }
 
-  public static void main(String[] args) {
-    System.out.println(isValid("]"));
-    System.out.println(isValid(""));
-    System.out.println(isValid("]["));
-    System.out.println(isValid("([)]"));
-    System.out.println(isValid("{[]}"));
-    System.out.println(isValid("(]"));
-    System.out.println(isValid("()[]{}"));
-  }
+    public static void main(String[] args) {
+        System.out.println(isValid("]"));
+        System.out.println(isValid(""));
+        System.out.println(isValid("]["));
+        System.out.println(isValid("([)]"));
+        System.out.println(isValid("{[]}"));
+        System.out.println(isValid("(]"));
+        System.out.println(isValid("()[]{}"));
+    }
 }
