@@ -1,6 +1,5 @@
-package org.goskyer.letcode;
+package org.goskyer.example;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.Arrays;
 
 /**

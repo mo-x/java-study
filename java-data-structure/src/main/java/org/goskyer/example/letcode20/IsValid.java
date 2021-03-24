@@ -1,4 +1,4 @@
-package org.goskyer.letcode;
+package org.goskyer.example.letcode20;
 
 import java.util.*;
 

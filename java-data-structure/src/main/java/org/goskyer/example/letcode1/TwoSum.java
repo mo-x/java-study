@@ -1,4 +1,4 @@
-package org.goskyer.letcode;
+package org.goskyer.example.letcode1;
 
 import java.util.Arrays;
 import java.util.HashMap;

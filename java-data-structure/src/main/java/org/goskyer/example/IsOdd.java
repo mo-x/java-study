@@ -1,4 +1,4 @@
-package org.goskyer.letcode;
+package org.goskyer.example;
 
 /**
  * @description: 位运算是否偶数

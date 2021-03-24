@@ -1,4 +1,6 @@
-package org.goskyer.letcode;
+package org.goskyer.example.letcode27;
+
+import java.util.Arrays;
 
 /**
  * 给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
@@ -36,21 +38,30 @@ package org.goskyer.letcode;
  */
 public class RemoveElement {
 
-  public static int removeElement(int[] nums, int val) {
-    int i = 0;
-    for (int j = 0; j < nums.length; j++) {
-      //
-      if (nums[j] != val) {
-        nums[i] = nums[j];
-        i++;
-      }
+    /**
+     * 快慢指针
+     *
+     * @param nums
+     * @param val
+     * @return
+     */
+    public static int removeElement(int[] nums, int val) {
+        //i 即为慢指针 也是不重复数字的计数器
+        int i = 0;
+        for (int j = 0; j < nums.length; j++) {
+            //不相等的情况下 进行快慢指针位置交换 这样就把不等于参数val的值向前移动
+            if (nums[j] != val) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;
     }
-    return i;
-  }
 
-  public static void main(String[] args) {
-    int[] ints = new int[] {3, 2, 2, 3};
-    int i = removeElement(ints, 3);
-    System.out.println(i);
-  }
+    public static void main(String[] args) {
+        int[] ints = new int[]{3, 2, 2, 3};
+        int i = removeElement(ints, 3);
+        System.out.println(Arrays.toString(ints));
+        System.out.println(i);
+    }
 }

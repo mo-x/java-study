@@ -1,4 +1,4 @@
-package org.goskyer.letcode;
+package org.goskyer.example;
 
 import java.util.ArrayList;
 import java.util.HashSet;
