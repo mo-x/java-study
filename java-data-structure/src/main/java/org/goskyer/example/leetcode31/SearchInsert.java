@@ -1,4 +1,4 @@
-package org.goskyer.example.letcode31;
+package org.goskyer.example.leetcode31;
 
 
 /**

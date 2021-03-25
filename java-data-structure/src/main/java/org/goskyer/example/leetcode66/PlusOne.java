@@ -1,4 +1,4 @@
-package org.goskyer.example;
+package org.goskyer.example.leetcode66;
 
 import java.util.Arrays;
 
@@ -21,9 +21,6 @@ import java.util.Arrays;
  * 解释: 输入数组表示数字 4321。
  * <p>
  * <p>
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/plus-one
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class PlusOne {
 
@@ -53,4 +50,5 @@ public class PlusOne {
         System.out.println(Arrays.toString(plusOne.plusOne(new int[]{1, 9, 9, 9})));
         System.out.println(Arrays.toString(plusOne.plusOne(new int[]{1, 9, 1, 9})));
     }
+
 }

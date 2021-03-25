@@ -1,4 +1,4 @@
-package org.goskyer.example.letcode28;
+package org.goskyer.example.leetcode28;
 
 /**
  * 实现 strStr() 函数。

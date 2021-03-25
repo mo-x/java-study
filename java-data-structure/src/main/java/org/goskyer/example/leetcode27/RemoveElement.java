@@ -1,4 +1,4 @@
-package org.goskyer.example.letcode27;
+package org.goskyer.example.leetcode27;
 
 import java.util.Arrays;
 
