@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
  * leetcode 13 罗马转数字
  * 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
  *
@@ -30,32 +29,34 @@ import java.util.Map;
  * <p>输入: "MCMXCIV" 输出: 1994 解释: M = 1000, CM = 900, XC = 90, IV = 4.
  */
 public class RomanToInt {
-  public static int romanToInt(String s) {
-    if (s == null || s.length() == 0) return 0;
-    Map<Character, Integer> map = new HashMap<>();
-    map.put('I', 1);
-    map.put('V', 5);
-    map.put('X', 10);
-    map.put('L', 50);
-    map.put('C', 100);
-    map.put('D', 500);
-    map.put('M', 1000);
-    char[] chars = s.toCharArray();
-    int num = 0;
-    for (int i = 0; i < chars.length; i++) {
-      Integer curr = map.get(chars[i]);
-      if (curr != null) {
-        if ((i + 1) >= chars.length || curr >= map.get(chars[i + 1])) {
-          num += curr;
-        } else {
-          num -= curr;
+    public static int romanToInt(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
         }
-      }
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+        char[] chars = s.toCharArray();
+        int num = 0;
+        for (int i = 0; i < chars.length; i++) {
+            Integer curr = map.get(chars[i]);
+            if (curr != null) {
+                if ((i + 1) >= chars.length || curr >= map.get(chars[i + 1])) {
+                    num += curr;
+                } else {
+                    num -= curr;
+                }
+            }
+        }
+        return num;
     }
-    return num;
-  }
 
-  public static void main(String[] args) {
-    System.out.println(romanToInt("LVIII"));
-  }
+    public static void main(String[] args) {
+        System.out.println(romanToInt("LVIII"));
+    }
 }
