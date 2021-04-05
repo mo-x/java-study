@@ -57,11 +57,13 @@ public class LongestPalindrome {
             //0号位置左边无元素所以不需要比对
             while (left >= 0 && chars[i] == chars[left]) {
                 len++;
+                //相等则要将左指针左移
                 left--;
             }
             //比较当前字符串与右边字符串是否相等
             while (right < chars.length && chars[i] == chars[right]) {
                 len++;
+                //相等则要将左指针右移
                 right++;
             }
             //比较左右字符串是否相等
@@ -102,12 +104,13 @@ public class LongestPalindrome {
     }
 
     public static void main(String[] args) {
+        System.out.println(longestPalindrome("abba"));
 //        System.out.println(longestPalindrome("abbcbba"));
 //        System.out.println(longestPalindrome("cbddbbbc"));
 //        System.out.println(longestPalindrome("a"));
 //        System.out.println(longestPalindrome("ac"));
 //        System.out.println(longestPalindrome("bb"));
-        System.out.println(longestPalindrome("abbccba"));
+//        System.out.println(longestPalindrome("abbccba"));
 //        System.out.println(longestPalindrome("abbcsbba"));
 //        System.out.println(longestPalindrome("aacabdkacaa"));
     }
