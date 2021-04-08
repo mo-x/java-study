@@ -1,4 +1,4 @@
-package org.goskyer.autowired;
+package org.xinyu.autowired;
 
 /**
  * spring 循环依赖解决方式

@@ -1,4 +1,4 @@
-package org.goskyer.autowired;
+package org.xinyu.autowired;
 
 public class UserService {
     @CodeBearAutowired
