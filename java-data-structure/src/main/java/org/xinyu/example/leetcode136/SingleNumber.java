@@ -48,7 +48,6 @@ public class SingleNumber {
         System.out.println(singleNumber(arr));
         arr = new int[]{2, 2, 1};
         System.out.println(singleNumber(arr));
-
         System.out.println(1 ^ 2 ^ 4 ^ 1 ^ 2);
     }
 }
