@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.goskyer</groupId>
-    <artifactId>java-thread</artifactId>
+    <artifactId>concurrent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <java.version>1.8</java.version>
