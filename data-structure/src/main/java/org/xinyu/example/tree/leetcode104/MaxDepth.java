@@ -13,6 +13,7 @@ package org.xinyu.example.tree.leetcode104;
  * 给定二叉树 [3,9,20,null,null,15,7]，
  * <p>
  * 3
+ *
  * / \
  * 9  20
  * /  \

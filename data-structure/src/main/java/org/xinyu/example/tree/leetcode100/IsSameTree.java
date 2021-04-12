@@ -1,4 +1,4 @@
-package org.xinyu.example.leetcode100;
+package org.xinyu.example.tree.leetcode100;
 
 
 /**

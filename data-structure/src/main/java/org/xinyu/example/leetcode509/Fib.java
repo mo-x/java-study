@@ -28,6 +28,12 @@ package org.xinyu.example.leetcode509;
  */
 public class Fib {
 
+    /**
+     * 利用递归求解
+     *
+     * @param n
+     * @return
+     */
     public int fib(int n) {
 
         if (n == 0 || n == 1) {
@@ -36,6 +42,12 @@ public class Fib {
         return fib(n - 1) + fib(n - 2);
     }
 
+    /**
+     * 动态规划
+     *
+     * @param n
+     * @return
+     */
     public int fib1(int n) {
         if (n < 2) {
             return n;

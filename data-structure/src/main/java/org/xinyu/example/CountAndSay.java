@@ -18,7 +18,20 @@ package org.xinyu.example;
  */
 public class CountAndSay {
 
-  public static void main(String[] args) {
-    //
-  }
+    public static void main(String[] args) {
+        recursion_display(3);
+    }
+
+    /**
+     * 关于 递归中递进和回归的理解
+     */
+    public static void recursion_display(int n) {
+        //保证前后打印的值一样
+        int temp = n;
+        System.out.println("递进:" + temp);
+        if (n > 0) {
+            recursion_display(--n);
+        }
+        System.out.println("回归:" + temp);
+    }
 }

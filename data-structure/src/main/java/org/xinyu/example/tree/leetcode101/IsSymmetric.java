@@ -1,4 +1,4 @@
-package org.xinyu.example.leetcode101;
+package org.xinyu.example.tree.leetcode101;
 
 /**
  * leetcode 101 对称二叉树

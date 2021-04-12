@@ -1,4 +1,4 @@
-package org.xinyu.example.leetcode141;
+package org.xinyu.example.linkedlist.leetcode141;
 
 import java.util.HashSet;
 import java.util.Set;

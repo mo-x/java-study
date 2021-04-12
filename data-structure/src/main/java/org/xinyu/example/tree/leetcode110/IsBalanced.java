@@ -1,4 +1,4 @@
-package org.xinyu.example.leetcode110;
+package org.xinyu.example.tree.leetcode110;
 
 /**
  * leetcode110 平衡二叉树
@@ -7,6 +7,7 @@ package org.xinyu.example.leetcode110;
  * 本题中，一棵高度平衡二叉树定义为：
  * <p>
  * 一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1 。
+ * <img alt="althernative text" src ="" />
  */
 public class IsBalanced {
 
