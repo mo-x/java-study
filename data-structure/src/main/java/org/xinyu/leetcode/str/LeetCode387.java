@@ -74,9 +74,12 @@ public class LeetCode387 {
 
 
     public static void main(String[] args) {
-        System.out.println(firstUniqChar2("leetcode"));
+        System.out.println(firstUniqChar2("leetcodeloveleetcodeloveleetcodes"));
         System.out.println(firstUniqChar("loveleetcode"));
         System.out.println('l' - 'a');
+        int[] count = new int[26];
+        count['l' - 'a']++;
+        System.out.println("");
 
 
     }
