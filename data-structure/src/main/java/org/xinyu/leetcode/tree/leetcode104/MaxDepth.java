@@ -1,4 +1,4 @@
-package org.xinyu.example.tree.leetcode104;
+package org.xinyu.leetcode.tree.leetcode104;
 
 /**
  * 104. 二叉树的最大深度

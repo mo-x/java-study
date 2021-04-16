@@ -143,13 +143,13 @@
         </dependency>
 
         <!--bigdata-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.sun</groupId>
             <artifactId>tools</artifactId>
             <version>1.8</version>
             <scope>system</scope>
             <systemPath>${java.home}/../lib/tools.jar</systemPath>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.apache.hbase</groupId>
@@ -175,11 +175,11 @@
             <version>1.2.17</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-core -->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-core</artifactId>
             <version>1.2.1</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_2.10</artifactId>

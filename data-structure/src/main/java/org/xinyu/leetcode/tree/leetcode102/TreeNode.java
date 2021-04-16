@@ -1,4 +1,4 @@
-package org.xinyu.leetcode.tree.leetcode104;
+package org.xinyu.leetcode.tree.leetcode102;
 
  public class TreeNode {
       int val;

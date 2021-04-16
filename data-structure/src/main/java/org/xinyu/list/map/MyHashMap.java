@@ -6,7 +6,7 @@ package org.xinyu.list.map;
  * @param <K>
  * @param <V>
  */
-public class MyHashMap<K,V> {
+public class MyHashMap<K, V> {
 
     private class Entry<K, V> {
         int hash;
@@ -49,7 +49,7 @@ public class MyHashMap<K,V> {
     }
 
     public boolean isEmpty() {
-        return size == 0 ? true : false;
+        return size == 0;
     }
 
     private int hash(K key) {
