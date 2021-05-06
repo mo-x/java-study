@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
- * 2,3,1, 45, 65, 33, 12
+ *
+ * 原始数组 2,3,1,45,65,33,12
  * 第一轮： 1,2,3,45,65,33,12
  *
  * @description: 选择排序

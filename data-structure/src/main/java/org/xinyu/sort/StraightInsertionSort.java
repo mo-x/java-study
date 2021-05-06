@@ -8,6 +8,7 @@ import java.util.stream.Stream;
  * @create: 2018-08-31 09:52
  **/
 public class StraightInsertionSort {
+
     public static void main(String[] args) {
         Integer[] a = {5, 6, 0, 88, 99, 10, 5, 3};
         for (int i = 1; i < a.length; i++) {

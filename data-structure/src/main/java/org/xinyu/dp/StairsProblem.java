@@ -1,4 +1,4 @@
-package org.xinyu.dynamicprogramming;
+package org.xinyu.dp;
 
 
 import java.util.HashMap;

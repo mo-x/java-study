@@ -13,7 +13,7 @@ package org.xinyu.leetcode.tree.leetcode104;
  * 给定二叉树 [3,9,20,null,null,15,7]，
  * <p>
  * 3
- *
+ * <p>
  * / \
  * 9  20
  * /  \
@@ -40,5 +40,36 @@ public class MaxDepth {
             maxDepth = Math.max(maxDepth(root.right), maxDepth);
         }
         return maxDepth + 1;
+    }
+
+
+    public static int maxDepth1(TreeNode root) {
+        if (root == null) return 0;
+        return 1 + Math.max(maxDepth1(root.left), maxDepth1(root.right));
+    }
+
+    public static int leftDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null) {
+            return 1;
+        }
+        int maxDepth = Integer.MIN_VALUE;
+        maxDepth = Math.max(leftDepth(root.left), maxDepth);
+        return 1 + maxDepth;
+    }
+
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(0);
+        TreeNode l1 = new TreeNode(1);
+        TreeNode l2 = new TreeNode(2);
+        root.left = l1;
+        l1.left = l2;
+//        System.out.println(maxDepth(root));
+//        System.out.println(maxDepth1(root));
+        System.out.println(leftDepth(root));
+
     }
 }

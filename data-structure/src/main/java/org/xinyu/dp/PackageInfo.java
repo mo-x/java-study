@@ -1,4 +1,4 @@
-package org.xinyu.dynamicprogramming;
+package org.xinyu.dp;
 
 /**
  * 动态规划问题
