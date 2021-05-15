@@ -1,4 +1,4 @@
-package org.xinyu.leetcode.leetcode125;
+package org.xinyu.leetcode.str.leetcode125;
 
 /**
  * leetcode 125 验证是回文字符串

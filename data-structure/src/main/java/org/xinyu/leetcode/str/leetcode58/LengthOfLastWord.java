@@ -1,4 +1,4 @@
-package org.xinyu.leetcode.leetcode58;
+package org.xinyu.leetcode.str.leetcode58;
 
 /**
  * leetcode 58 最后一个单词长度

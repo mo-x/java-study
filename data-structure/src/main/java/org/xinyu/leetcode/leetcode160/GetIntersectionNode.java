@@ -1,4 +1,4 @@
-package org.xinyu.example.leetcode160;
+package org.xinyu.leetcode.leetcode160;
 
 import java.util.HashSet;
 import java.util.Set;

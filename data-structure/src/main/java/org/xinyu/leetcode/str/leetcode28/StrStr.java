@@ -1,4 +1,4 @@
-package org.xinyu.leetcode.leetcode28;
+package org.xinyu.leetcode.str.leetcode28;
 
 /**
  * 实现 strStr() 函数。

@@ -1,4 +1,4 @@
-package org.xinyu.leetcode.leetcode169;
+package org.xinyu.leetcode.array.leetcode169;
 
 import java.util.Arrays;
 import java.util.HashMap;
