@@ -6,7 +6,7 @@ package org.xinyu.dp;
 public class CoinChange {
 
     //硬币组合
-    public static int[] coins = {1, 3, 5};
+    public static int[] coins = {1, 2, 5};
 
     /**
      * 最后一步:
@@ -47,7 +47,7 @@ public class CoinChange {
             for (int j : coins) {
                 //1.首先计算的金额要大于输入的金额
                 //2.dp[i-j]表示剩余的金额不能是无解的
-                //3.
+                //3.dp[i-j]+1
                 if (i >= j && dp[i - j] != Integer.MAX_VALUE && dp[i - j] + 1 < dp[i]) {
                     dp[i] = dp[i - j] + 1;
                 }
@@ -62,7 +62,7 @@ public class CoinChange {
     }
 
     public static void main(String[] args) {
-        System.out.println(coinChange(8));
+        System.out.println(coinChange(11));
 
     }
 }
