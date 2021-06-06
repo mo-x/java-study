@@ -23,6 +23,13 @@ public class LeetCode231 {
         return v == 0;
     }
 
+    /**
+     * 2幂次方的特性2
+     * n & -n = n
+     *
+     * @param n
+     * @return
+     */
     public static boolean isPowerOfTwo1(int n) {
         if (n == 0) {
             return false;
@@ -35,7 +42,6 @@ public class LeetCode231 {
         System.out.println(Integer.toBinaryString(4));
         System.out.println(Integer.toBinaryString(-4));
         System.out.println(Integer.toBinaryString(16 - 1));
-
         System.out.println(isPowerOfTwo(-2147483648));
 
 

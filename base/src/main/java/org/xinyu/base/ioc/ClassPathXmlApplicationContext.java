@@ -1,8 +1,5 @@
 package org.xinyu.base.ioc;
 
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.input.SAXBuilder;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -17,7 +14,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
     private Map<String, Object> beans = new HashMap<String, Object>();
 
     public ClassPathXmlApplicationContext() throws Exception {
-        SAXBuilder sb = new SAXBuilder();
+      /*  SAXBuilder sb = new SAXBuilder();
         String path = Class.class.getClass().getResource("/").getPath();
         System.out.println("path:" + path);
         Document doc = sb.build("d:/bean.xml"); // 构造文档对象
@@ -38,7 +35,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
                 Method method = beanObj.getClass().getMethod(methodName, injectObject.getClass());
                 method.invoke(beanObj, injectObject); // set注入UserDao对象
             }
-        }
+        }*/
     }
 
     public Object getBean(String id) {

@@ -27,8 +27,8 @@ public class MyThreadFactory implements ThreadFactory {
     }
 
     public String getStas() {
-        StringBuffer     buffer = new StringBuffer();
-        Iterator<String> it     = stats.iterator();
+        StringBuffer buffer = new StringBuffer();
+        Iterator<String> it = stats.iterator();
         while (it.hasNext()) {
             buffer.append(it.next());
             buffer.append("\n");
